@@ -60,6 +60,36 @@ nubes de palabras con y sin stopwords y una por mes, presencia de los departamen
 .venv\Scripts\jupyter notebook 01_exploracion.ipynb
 ```
 
+## 3. Temas por año (`02_temas_por_anio.ipynb`)
+
+Profundiza en los cambios de vocabulario para construir la historia:
+
+- **Limpieza:** quita firmas (iniciales o nombres al inicio y al final), enlaces y correos.
+- **Normalización:** lematización con spaCy (`es_core_news_sm`), separando *temas*
+  (sustantivos y adjetivos) de *nombres* (nombres propios), con bigramas.
+- **Etapas:** similitud coseno entre años, términos característicos de cada etapa
+  (2015–2019, 2020–2022, 2023–2026) y lo que sube y baja entre la primera y la última.
+- **Cuatro historias de cambio:** la reorganización de 2023, los rectores, el lenguaje
+  incluyente y los temas nuevos (pandemia, inteligencia artificial, semiconductores).
+
+La lematización tarda ~10 minutos la primera vez; el resultado se guarda en
+`data/processed/noticias_lemas.jsonl` (ignorado por git). Si se vuelve a correr el
+scraper, hay que borrar ese archivo para que se recalcule.
+
+## 4. Tecnología, cultura y vida universitaria (`03_tecnologia_y_cultura.ipynb`)
+
+Primer paso de la historia: *¿las noticias de la Unison reflejan el progreso
+tecnológico y cultural de Sonora?* Usa los lemas del notebook 02 (hay que correrlo antes).
+
+- **Modelado de temas** con TF-IDF + NMF (scikit-learn): 45 temas generales, agrupados
+  en tecnología, cultura y vida universitaria, y un segundo modelo dentro de tecnología
+  y de cultura para temas más específicos (IA, litio, energía solar; teatro, ópera y
+  FAOT, artes plásticas...).
+- **Tema destacado de cada año** y una **lista corta** de temas concretos
+  (semiconductores, IA, litio, nearshoring, FAOT, sindicatos...) para compararla después
+  con Google Trends y con otros medios.
+- **Vida universitaria:** cómo presenta el portal los conflictos con los sindicatos.
+
 ### Notas sobre la calidad de los datos
 - **Codificación mixta:** las notas antiguas (~2002-2010) están en Windows-1252
   dentro de una página UTF-8. El scraper decodifica UTF-8 y cae a cp1252 byte a

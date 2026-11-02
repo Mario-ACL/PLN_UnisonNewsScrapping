@@ -8,3 +8,7 @@ ipykernel
 matplotlib
 wordcloud
 nltk
+scikit-learn>=1.7
+spacy>=3.8
+# Modelo pequeño de español para spaCy (lematización)
+es_core_news_sm @ https://github.com/explosion/spacy-models/releases/download/es_core_news_sm-3.8.0/es_core_news_sm-3.8.0-py3-none-any.whl
