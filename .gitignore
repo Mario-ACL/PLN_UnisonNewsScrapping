@@ -1,0 +1,21 @@
+# Entorno virtual de Python
+.venv/
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Datos completos (~130 MB): se generan con scraper_unison.py.
+# En el repositorio solo va la muestra (data/raw/muestra.*).
+data/raw/noticias_unison.jsonl
+data/raw/noticias_unison.csv
+data/raw/scraping.log
+
+# Caché de lemas de spaCy (lo genera 02_temas_por_anio.ipynb)
+data/processed/
+
+# Editor y sistema operativo
+.vscode/
+.DS_Store
+Thumbs.db
