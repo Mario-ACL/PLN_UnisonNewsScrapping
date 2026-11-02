@@ -90,6 +90,32 @@ tecnológico y cultural de Sonora?* Usa los lemas del notebook 02 (hay que corre
   con Google Trends y con otros medios.
 - **Vida universitaria:** cómo presenta el portal los conflictos con los sindicatos.
 
+## 5. Noticias vs. Google Trends (`04_google_trends.ipynb`)
+
+Paso 2 de la historia: compara la lista corta del notebook 03 con el interés de
+búsqueda en Google (México y Sonora, mensual, 2015–2026).
+
+- **Datos:** se descargan con `pytrends` (librería no oficial) y se guardan en
+  `data/raw/google_trends.csv` (descargado el 1 de noviembre de 2026; sí va en el
+  repositorio). Si el archivo existe, el notebook solo lo lee.
+- **Año por año:** curvas escaladas a su máximo, correlación y si la Unison va al mismo
+  tiempo, se adelanta o va atrás del interés del público.
+- **Mes por mes:** el FAOT (cada enero) y las búsquedas del sindicato STAUS contra las
+  notas del portal que lo mencionan.
+
+## 6. Cómo se hacen las noticias (`05_como_se_hacen_las_noticias.ipynb`)
+
+Estilometría de las noticias en cuatro etapas: antes (2015–2019), pandemia (2020–2021),
+después (2022–2024) y nueva etapa (2025–2026).
+
+- **Producción:** notas por año y por día, fin de semana, firmas (iniciales antes de
+  2018, nombres después) y concentración del equipo.
+- **Forma:** largo, párrafos, oraciones y legibilidad (índice INFLESZ de Szigriszt-Pazos).
+- **Voces:** texto entre comillas, a quién citan los titulares y verbos de cita.
+- **Huella de estilo:** Delta de Burrows con las 60 palabras funcionales más frecuentes.
+- **Equipo o línea editorial:** cada reportero comparado consigo mismo, y el cambio mes por
+  mes alrededor del cambio de rectora (junio de 2025).
+
 ### Notas sobre la calidad de los datos
 - **Codificación mixta:** las notas antiguas (~2002-2010) están en Windows-1252
   dentro de una página UTF-8. El scraper decodifica UTF-8 y cae a cp1252 byte a
