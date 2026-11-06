@@ -19,3 +19,6 @@ data/processed/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Datos locales de la carpeta de entrega (el scraper y el notebook los generan)
+Para entrega/data/
